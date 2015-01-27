@@ -116,7 +116,7 @@ public class IMDB {
 	//Save all movies entered to IMDB.
 	public void saveMovies() throws IOException
 	{
-		String fileName = "moviesList.txt"; //Create a TXT file to save all the movies.
+		String fileName="moviesList.txt"; //Create a TXT file to save all the movies.
 		FileOutputStream fileOutputStream = new FileOutputStream(fileName); //Write the stream of raw bytes to the TXT file. 
 		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 		objectOutputStream.writeObject(movies); //Writes all the movies in IMDB to the file.

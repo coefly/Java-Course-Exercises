@@ -81,15 +81,7 @@ public class IMDBTextualInterface {
 			
 			case 5:
 				
-				try {
-					i1.saveMovies();
-				} catch (IOException e) {
-					e.getMessage();
-				}
-				System.out.println("\n" + "Please enter your next choice...");
-			break;
-			
-			
+				i1.saveMovies(i1.getAll());
 			}
 			
 

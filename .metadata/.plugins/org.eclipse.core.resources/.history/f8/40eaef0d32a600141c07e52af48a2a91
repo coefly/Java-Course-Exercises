@@ -54,8 +54,7 @@ public class IMDBTextualInterface {
 					System.out.println("Your vote had been updated successfuly"); 
 				} catch (ImdbException e) {
 					e.getMessage();
-				}
-				System.out.println("\n" + "Please enter your next choice...");
+				}	
 			break;
 			
 			case 3:
@@ -69,24 +68,12 @@ public class IMDBTextualInterface {
 				} catch (ImdbException e) {
 					e.printStackTrace();
 				}
-				System.out.println("\n" + "Please enter your next choice...");
 			break;
 			
 			case 4:
 				
 				System.out.println("IMDB movies: ");
 				System.out.println(i1.getAll());
-				System.out.println("\n" + "Please enter your next choice...");
-			break;
-			
-			case 5:
-				
-				try {
-					i1.saveMovies();
-				} catch (IOException e) {
-					e.getMessage();
-				}
-				System.out.println("\n" + "Please enter your next choice...");
 			break;
 			
 			

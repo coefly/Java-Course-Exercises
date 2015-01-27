@@ -86,6 +86,7 @@ public class IMDBTextualInterface {
 				} catch (IOException e) {
 					e.getMessage();
 				}
+				System.out.println("The movies list has been saved successfully.");
 				System.out.println("\n" + "Please enter your next choice...");
 			break;
 			
