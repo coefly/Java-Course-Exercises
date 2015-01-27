@@ -1,0 +1,18 @@
+package iOBasics;
+import java.io.*;
+
+public class iOBasic {
+	
+	public static void main(String[] args) {
+		
+		try {
+			FileInputStream Src = new FileInputStream("ReadMeSrc.txt");
+			
+			while ((Src.read(buff)) != -1)
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

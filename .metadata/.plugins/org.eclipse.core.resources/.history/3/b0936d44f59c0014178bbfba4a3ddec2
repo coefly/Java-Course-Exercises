@@ -1,0 +1,26 @@
+package com.course.books;
+
+public class Library {
+	// 2. Define the single instance as a static member
+	private static Library theInstance = new Library();
+	
+	private Book[] books;
+	private int numOFBooks;
+	private String nameOfLibrarian;
+	
+	// 1. private constructor - no one from the outside can 
+	// create objects
+	private Library()
+	{
+	}
+	
+	// 3. Define an access method for the user
+	public static Library getInstance()
+	{
+		return theInstance;
+	}
+	
+	///////////////////////
+	///// Library code ////
+	///////////////////////
+}

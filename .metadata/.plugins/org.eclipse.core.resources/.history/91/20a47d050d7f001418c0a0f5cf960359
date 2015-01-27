@@ -1,0 +1,13 @@
+package ntuJavaExercises;
+
+public class SquareBoard {
+
+	public static void main(String[]args)
+	{
+		int row = 0;
+		int line = 0;
+		
+		
+		
+	}
+}

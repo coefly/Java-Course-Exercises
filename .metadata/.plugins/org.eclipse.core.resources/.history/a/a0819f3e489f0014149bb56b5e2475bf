@@ -1,0 +1,12 @@
+package threadsHomeExercise;
+
+public class TreasureChest {
+	
+	private int coins = 0;
+	
+	public TreasureChest(int coins)
+	{
+		this.coins = coins;
+	}
+
+}

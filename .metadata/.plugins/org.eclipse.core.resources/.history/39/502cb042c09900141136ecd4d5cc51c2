@@ -1,0 +1,45 @@
+package iO;
+import java.io.*;
+import java.util.*;
+
+public class Calculator {
+	
+	public static void main(String[] args) {
+	
+		// System.in - keyboard
+		// InputStreamReader - converts bytes to chars
+		
+		System.out.println("Please enter a number..");
+		Scanner sc1 = new Scanner(new InputStreamReader(System.in));
+		int num1 = sc1.nextInt();
+		
+		
+		System.out.println("Please enter another number..");
+		Scanner sc2 = new Scanner(new InputStreamReader(System.in));
+		int num2 = sc2.nextInt();
+		
+		System.out.println("Please enter an Operator..");
+		Scanner operator = new Scanner(new InputStreamReader(System.in));
+		String oper = operator.nextLine();
+		
+
+		
+	}
+	
+	public static double operation(String operator, int num1, int num2)
+	{
+		double solution = 0;
+		if (operator == "-")
+		{
+			solution = num1 - num2;
+		}
+		if (operator == "+")
+		{
+			solution = num1 + num2;
+		}
+		if (operator == "*")
+		{
+			solution = num1 * num2;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+package ntuJavaExercises;
+
+public class Product1ToN {
+
+	public static void main(String[]args)
+	{
+		int N = 10;
+		double product = 0;
+		
+		for(int i = 1; i <= N; i++)
+		{
+			product = product * N;
+		}
+		
+		System.out.println("The Product is: " + product);
+	}
+}

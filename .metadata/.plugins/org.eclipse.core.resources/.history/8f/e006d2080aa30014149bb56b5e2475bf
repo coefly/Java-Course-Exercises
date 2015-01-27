@@ -1,0 +1,102 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+import java.io.*;
+
+public class IMDBTextualInterface {
+
+	public static void main(String[] args) {
+		
+		IMDB i1 = IMDB.getInstance(); //The instantiation of IMDB for singleton compliancy.
+		byte Choice = 0;	
+		
+		//Calling Main Menu.
+		mainMenu();
+		
+		Scanner sc = new Scanner(System.in); //Scanning the keyboard input for the user's chosen option.
+		
+		//getUserSelectionInt(Scanner userChoice); //An integer to represent the user's choice entered.
+		
+		while ((Choice = getUserSelection(sc)) != 6)
+			switch (Choice) {
+			
+			case 1:
+			
+				String detailsEntered; //Will hold the details entered as one String.
+				String[] detailsEnteredSplit = null; //Will hold the details entered after splitting by ";" .
+							
+				System.out.println("Please enter a movie name and a list of actors like so: "
+						+ "Movie name;Actor1,Actor2, ...");				
+				try {
+					detailsEntered = sc.next(); //Extracting movie name and actors from entered string.
+					detailsEnteredSplit = detailsEntered.split(";"); //Moving from user entered string to an array with a split.
+					i1.addMovie(detailsEnteredSplit[0], detailsEnteredSplit[1]);
+				} catch (ImdbException e) {
+					e.getMessage();
+				}	
+				System.out.println("The movies in IMDB are: ");
+				List <Movie> moviess = new ArrayList<> (i1.getMovies().values());
+				i1.printList(moviess);
+				System.out.println("\n" + "Please enter your next choice...");
+			break;
+			
+			case 2:
+			
+				String votingEntered; //Will hold the details entered as one String.
+				String[] votingEnteredSplit = null; //Will hold the details entered after splitting by ";" .
+			
+				System.out.println("Please enter a movie name and a vote like so: "
+						+ "Movie name; vote");
+				try {
+					votingEntered = sc.next(); //Extracting movie name and actors from entered string.
+					votingEnteredSplit = votingEntered.split(";"); //Moving from user entered string to an array with a split.
+					i1.vote(votingEnteredSplit[0], Integer.parseInt(votingEnteredSplit[1]));
+					System.out.println("Your vote had been updated successfuly"); 
+				} catch (ImdbException e) {
+					e.getMessage();
+				}
+			
+			
+			}
+			
+
+	}
+	
+	
+	//
+	//Functions
+	//
+	
+	//Main Menu
+			public static void mainMenu() {
+				System.out.println("Welcome to Lior's IMDB :-)" 
+						+ "\n" + "--------------------------------");
+				System.out.println("Please enter your choice from the options below: ");
+				System.out.println("1. Add a movie to the IMDB database.");
+				System.out.println("2. Vote for a movie in IMDB.");
+				System.out.println("3. Get a list of the top movies.");
+				System.out.println("4. View all the movies found in IMDB.");
+				System.out.println("5. Save IMDB to a .TXT file.");
+				System.out.println("6. EXIT.");
+				System.out.println("|--------------------------------|");
+				
+		}
+		
+	//User Selection from keyboard using a scanner. Must be an Integer.
+		public static byte getUserSelection(Scanner sc) 
+		{
+			byte userChoice = 0;
+			while (true)
+			{
+				try 
+				{
+					userChoice = sc.nextByte();	
+					return userChoice;
+				} catch (InputMismatchException e) {
+					System.out.println("An illegal input was entered. Please enter a number:");
+						sc.nextLine();
+					}
+				} 
+		}
+	
+}

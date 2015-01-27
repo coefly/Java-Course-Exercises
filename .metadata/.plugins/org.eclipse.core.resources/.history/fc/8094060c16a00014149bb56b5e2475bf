@@ -1,0 +1,30 @@
+package threadsHomeExercise;
+
+public class Robber extends Thread{
+	
+		//
+		//Variables
+		//
+	
+		TreasureChest treasure1 = new TreasureChest(0);
+	
+		//Constructor for Robber passing the Robber's number.
+		public Robber(String robberNumber)
+		{
+			super(robberNumber);
+		}
+		
+		public void run()
+		{
+			if (treasure1.isEmpty() == false)
+			{
+				treasure1.robCoin();
+				System.out.println("I, Robber number " + getName() + " stole a coin."); //Print "Hello World" + the current thread name.
+			}
+			
+		}
+		
+		
+		
+
+}

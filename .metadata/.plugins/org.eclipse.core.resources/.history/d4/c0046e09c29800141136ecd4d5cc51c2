@@ -1,0 +1,68 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+
+import com.course.shapes.MyPoint;
+
+public class IMDB {
+	
+	//
+	// Vriables
+	//
+	private Map<String, Movie> movies = new HashMap<>();
+	
+	//
+	// Constructors
+	//
+	
+	//no-arg constructor
+	public void IMDB()
+	{
+		
+	}
+	
+	//
+	// Methods
+	//
+	
+	public Map<String, Movie> getMovies()
+	{
+		return movies;
+	}
+
+	public void addMovie(String name, Set<String> actors)
+	{
+		movies.put(name, new Movie(name, actors));
+	}
+	
+	public double vote(String name, int voting)
+	{
+		try {
+			movies.get(name).updateRank(voting);
+		} catch (ImdbException e) {
+			throw new ImdbException("The movie:'" + movies.get(name)
+					+ "' doesn't exist in the movies list.");
+			e.printStackTrace();
+		}
+		return movies.get(name).getRank();
+	}
+	
+	public List<Movie> getTop(int number)
+	{
+		Collections.sort(movies), new compareByRank());
+		
+	}
+}
+
+/* Comparator function.
+ * Receives 2 Movies and compares the 2 Movie's rank.
+ */
+class compareByRank implements Comparator<Movie>
+{
+	public int compare(Movie m1, Movie m2)
+	{
+		if (m1.getRank() > m2.getRank()) return 1;
+		if (m1.getRank() < m2.getRank()) return -1;
+		return 0;
+	}
+}

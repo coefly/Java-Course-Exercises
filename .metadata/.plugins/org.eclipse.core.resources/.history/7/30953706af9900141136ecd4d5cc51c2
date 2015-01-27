@@ -1,0 +1,12 @@
+package iOBasics;
+import java.io.*;
+
+public class iOBasic {
+	
+	public static void main(String[] args) {
+		
+		FileInputStream in = new FileInputStream("ReadMeDest.txt");
+		
+	}
+
+}

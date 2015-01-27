@@ -1,0 +1,11 @@
+package imdbHomeworkExercise;
+
+public class TestIMDB {
+	
+	public static void main(String[] args) 
+	{
+		IMDB i1 = new IMDB.getIMDB();
+		
+	}
+
+}

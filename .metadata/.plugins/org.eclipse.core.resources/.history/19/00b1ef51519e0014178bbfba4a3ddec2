@@ -1,0 +1,86 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+import java.io.*;
+
+public class IMDBTextualInterface {
+
+	public static void main(String[] args) {
+		
+		IMDB i1 = IMDB.getInstance(); //The instantiation of IMDB for singleton compliancy.
+		byte Choice = 0;	
+		
+		System.out.println("Welcome to Lior's IMDB :-)" 
+				+ "\n" + "--------------------------------");
+		
+		Scanner userChoice = new Scanner(System.in); //Scanning the keyboard input for the user's chosen option.
+		
+		//getUserSelectionInt(Scanner userChoice); //An integer to represent the user's choice entered.
+		
+		while ((Choice = getUserSelection(userChoice)) != 6)
+			switch (Choice) {
+			case 1:
+			{
+				Set<String> actors = new HashSet<>();
+				Scanner movieAndActorsChosen = new Scanner(System.in);
+				System.out.println("Please enter a movie name and a list of actors like so:"
+						+ "Movie name; Actor1; Actor2;...");
+				String movieName = movieAndActorsChosen.next(); //Extracting movie name from entered string.
+				String actorsForMovie = movieAndActorsChosen.next();
+
+				String[] actorss = actorsForMovie.split(";|:"); //Extracting actors from user entered string.
+				for (String str : actorss) 
+				{
+					actors.add(str);
+				}
+				try {
+					i1.addMovie(movieName, actors);
+				} catch (ImdbException e) {
+					e.getMessage();
+				}	
+				List <Movie> moviess = new ArrayList<> (i1.getMovies().values());
+				i1.printList(moviess);
+			}
+			
+			}
+
+	}
+	
+	
+	//
+	//Functions
+	//
+	
+	//Main Menu
+			public static void mainMenu() {
+				System.out.println("Welcome to Lior's IMDB :-)" 
+						+ "\n" + "--------------------------------");
+				System.out.println("Please enter your choice from the options below: ");
+				System.out.println("1. Add a movie to the IMDB database.");
+				System.out.println("2. Vote for a movie in IMDB.");
+				System.out.println("3. Get a list of the top movies.");
+				System.out.println("4. View all the movies found in IMDB.");
+				System.out.println("5. Save IMDB to a .TXT file.");
+				System.out.println("6. EXIT.");
+				System.out.println("------------------------------");
+				
+		}
+		
+	//User Selection from keyboard using a scanner. Must be an Integer.
+		public static byte getUserSelection(Scanner sc) 
+		{
+			byte userChoice = 0;
+			while (true)
+			{
+				try 
+				{
+					userChoice = sc.nextByte();	
+					return userChoice;
+				} catch (InputMismatchException e) {
+					System.out.println("An illegal input was entered. Please enter a number:");
+						sc.nextLine();
+					}
+				} 
+		}
+	
+}

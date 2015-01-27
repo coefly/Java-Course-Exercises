@@ -1,0 +1,14 @@
+package Threads;
+
+public class FirstThreadsExercise {
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+	public class threadAStart (Thread t)
+	{
+		
+	}
+}

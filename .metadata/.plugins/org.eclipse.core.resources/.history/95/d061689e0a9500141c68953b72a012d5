@@ -1,0 +1,10 @@
+package imdbHomeworkExercise;
+
+import java.util.HashSet;
+import java.util.*;
+
+public class Movie {
+	
+	Set<Double> mySet = new HashSet<>();
+
+}

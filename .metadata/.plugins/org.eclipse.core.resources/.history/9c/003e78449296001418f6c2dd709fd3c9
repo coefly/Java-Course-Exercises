@@ -1,0 +1,18 @@
+package howToUseCompares;
+
+import java.util.LinkedList;
+import java.util.*;
+
+public class Compares {
+
+	public static void main(String[] args) 
+	{
+		List<Integer> myList = new LinkedList<>();
+
+	}
+	
+	//Compare classes
+	
+	
+
+}

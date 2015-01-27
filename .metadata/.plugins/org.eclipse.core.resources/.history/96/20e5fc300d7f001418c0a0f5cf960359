@@ -1,0 +1,23 @@
+package ntuJavaExercises;
+
+public class SquareBoard {
+
+	public static void main(String[]args)
+	{
+		//Defining row and line variables.
+		int row = 0;
+		int line = 0;
+		
+		//Defining for loop to print the square board.
+		for(int i = 0; i <= row; i++)
+		{
+			for(int j = 0; j <= line; j++)
+			{
+				
+			}
+		}
+		
+		
+		
+	}
+}

@@ -1,0 +1,98 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+import java.io.*;
+
+public class IMDBTextualInterface {
+
+	public static void main(String[] args) {
+		
+		IMDB i1 = IMDB.getInstance(); //The instantiation of IMDB for singleton compliancy.
+		byte choice = 0;	
+		
+		System.out.println("Welcome to Lior's IMDB :-)" 
+				+ "\n" + "--------------------------------");
+		
+		do {
+		Scanner userChoice = new Scanner(System.in); //Scanning the keyboard input for the user's chosen option.
+		
+		//Options menu.
+		System.out.println("Please enter your choice from the options below: ");
+		System.out.println("1. Add a movie to the IMDB database.");
+		System.out.println("2. Vote for a movie in IMDB.");
+		System.out.println("3. Get a list of the top movies.");
+		System.out.println("4. View all the movies found in IMDB.");
+		System.out.println("5. Save IMDB to a .TXT file.");
+		System.out.println("6. EXIT.");
+		
+		choice = userChoice.nextByte(); //An integer to represent the user's choice entered.
+		
+		if (choice == 1)
+			{
+			Set<String> actors = new HashSet<>();
+			Scanner actorsChosen = new Scanner(System.in);
+			System.out.println("Please enter a movie name and a list of actors like so:"
+					+ "Movie name; Actor1; Actor2;...");
+			String movieName = actorsChosen.next();
+			String actorsForMovie = actorsChosen.next();
+						
+			String[] actorss = actorsForMovie.split(";|:");
+			for (String str : actorss) 
+				{
+					actors.add(str);
+				}
+			try {
+				i1.addMovie(movieName, actors);
+			} catch (ImdbException e) {
+				e.printStackTrace();
+			}	
+			List <Movie> moviess = new ArrayList<> (i1.getMovies().values());
+			i1.printList(moviess);
+			}
+			
+		} while (choice != 6);
+	}
+	
+	
+	//______________________________________________________________
+	//Functions to use in main()
+	//______________________________________________________________
+		
+	//Main Menu
+	//*********************************
+		public static void mainMenu() {
+			System.out.println("---------------------------------");
+
+			System.out.println("IMDB Menu");
+			System.out.println("*********");
+			System.out.println("1. Add Movie");
+			System.out.println("2. Vote for a Movie");
+			System.out.println("3. Top Movies");
+			System.out.println("4. Movies List");
+			System.out.println("5. Save Movies Data");
+			System.out.println("6. Load Movies Data");
+			System.out.println("7. Exit");
+			System.out.println("_________________________________");
+			System.out.println("");
+
+			System.out.print("What whould you like to Do? (1-5)  ");
+		}
+		
+	//User Selection must be an Integer - mainMenu
+		public static int getUserSelectionInt(Scanner sc) 
+		{
+			int userChoice = 0;
+			while (true)
+			{
+				try 
+				{
+					userChoise = sc.nextInt();	
+					return userChoice;
+				} catch (InputMismatchException e) {
+					System.out.println("An illegal input was entered. Please enter a number:");
+						sc.nextLine();
+					}
+				} 
+		}
+	
+}
