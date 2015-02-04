@@ -1,0 +1,53 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+
+import com.course.shapes.MyPoint;
+
+public class IMDB {
+	
+	//
+	// Vriables
+	//
+	private Map<String, Movie> movies = new HashMap<>();
+	
+	//
+	// Constructors
+	//
+	
+	//no-arg constructor
+	public void IMDB()
+	{
+		
+	}
+	
+	//
+	// Methods
+	//
+	
+	public Map<String, Movie> getMovies()
+	{
+		return movies;
+	}
+
+	public void addMovie(String name, Set<String> actors)
+	{
+		movies.put(name, new Movie(name, actors));
+	}
+	
+	public double vote(String name, int voting)
+	{
+		try {
+			movies.get(name).updateRank(voting);
+		} catch (ImdbException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return movies.get(name).getRank();
+	}
+	
+	public List<Movie> getTop(int number)
+	{
+		
+	}
+}

@@ -1,0 +1,28 @@
+package beans;
+
+import java.util.Collection;
+
+import com.course.shapes.MyPoint;
+
+public class Company {
+	
+	private long id;
+	private String compName;
+	private String password;
+	private String email;
+	private Collection<Coupon> coupons;
+	
+	//Company constructor.
+	public void Company(long id, String compName, String password, String email)
+	{
+		this.id= id;
+		this.compName = compName;
+		this.password = password;
+		this.email = email;
+	}
+	
+	
+	
+	
+
+}

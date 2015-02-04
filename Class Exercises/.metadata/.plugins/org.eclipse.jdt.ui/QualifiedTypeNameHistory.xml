@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="ntuOopExercises.MyPoint"/>
+<fullyQualifiedTypeName name="ntuOopExercises.MyTriangle"/>
+<fullyQualifiedTypeName name="ntuOopExercises.MyTime"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+<fullyQualifiedTypeName name="ntuOopExercises.Author"/>
+<fullyQualifiedTypeName name="ntuOopExercises.Cylinder"/>
+<fullyQualifiedTypeName name="ntuOopExercises.Shape"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="ntuOopExercises.Square"/>
+<fullyQualifiedTypeName name="parkingHomeworkExercise.Car"/>
+<fullyQualifiedTypeName name="parkingHomeworkExercise.Veichle"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+<fullyQualifiedTypeName name="parkingHomeworkExercise.Transport"/>
+<fullyQualifiedTypeName name="parkingHomeworkExercise.Truck"/>
+<fullyQualifiedTypeName name="parkingHomeworkExercise.Bike"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="howToUseCompares.Compares.compareBySecondLetter"/>
+</qualifiedTypeNameHistroy>

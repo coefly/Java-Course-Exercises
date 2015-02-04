@@ -1,0 +1,85 @@
+package imdbHomeworkExercise;
+import java.util.*;
+
+public class TestIMDB {
+	
+	public static void main(String[] args) 
+	{
+		IMDB i1 = IMDB.getInstance(); //The instanciation of IMDB for singleton compliancy.
+		
+		//Option 1 for creating a set of actors.
+		Set<String> actors1 = new HashSet<>();
+		Collections.addAll(actors1, "eew", "qwqe");
+		
+		
+		//Option 2 for creating a set of actors.
+		Set<String> actors2 = new HashSet<>();
+		actors2.add("Rami");
+		actors2.add("Dana");
+		actors2.add("Bat");
+		actors2.add("Mahmud");
+		
+		//Option 3 for creating a set of actors.
+		//TODO - Create another constructor in Movie which will receive a name and an array of strings
+		//TODO - and with a loop will enter all names into the array of strings.
+		
+		//Adding movies to IMDB.
+		try {
+			i1.addMovie("Terminator", actors1);
+		} catch (ImdbException e) {
+			e.getMessage();
+		}
+		
+		try {
+			i1.addMovie("Sami Borekas", actors2);
+		} catch (ImdbException e) {
+			e.getMessage();
+		}
+		
+		try {
+			i1.addMovie("Borekas", actors2);
+		} catch (ImdbException e) {
+			e.getMessage();
+		}
+		
+		//Voting for the movies.
+		try {
+			i1.vote("Terminator", 6);
+		} catch (ImdbException e) {
+			e.printStackTrace();
+		}
+			
+		try {
+			i1.vote("Sami Borekas", 10);
+		} catch (ImdbException e) {
+			e.printStackTrace();
+		}
+		
+		try { //The first vote for Borekas movie to check the Rank is changing.
+			i1.vote("Borekas", 7);
+		} catch (ImdbException e) {
+			e.printStackTrace();
+		}
+		
+		try { //The second vote for Borekas movie to check the Rank is changing.
+			i1.vote("Borekas", 2);
+		} catch (ImdbException e) {
+			e.printStackTrace();
+		}
+		
+		//Printing the top 3 movies using the getTop method.
+		try{
+			System.out.println(i1.getTop(2));
+		} catch (ImdbException e) {
+			e.printStackTrace();
+		}
+		
+		
+		//Testing get all movies collection.
+		System.out.println(i1.getMovies());
+		
+		
+		
+	}
+
+}

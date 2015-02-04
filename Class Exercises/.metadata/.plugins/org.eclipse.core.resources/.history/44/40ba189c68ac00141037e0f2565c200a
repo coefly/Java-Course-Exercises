@@ -1,0 +1,28 @@
+package beans;
+
+import java.util.Collection;
+
+public class Customer {
+	
+	//
+	// Varivables.
+	//
+	
+	private long id;
+	private String custName;
+	private String password;
+	private Collection<Coupon> coupons;
+
+
+	//Customer contstructor.
+	public Customer(long id, String custName, String password,
+			Collection<Coupon> coupons) 
+	{
+		super();
+		this.id = id;
+		this.custName = custName;
+		this.password = password;
+		this.coupons = coupons;
+	}
+	
+}

@@ -1,0 +1,17 @@
+package threadsHomeExercise;
+
+public class Robber extends Thread{
+	
+		//Constructor for Robber passing the Robber's number.
+		public Robber(String robberNumber)
+		{
+			super(robberNumber);
+		}
+		
+		public void run()
+		{
+			System.out.println("Hello World " + getName()); //Print "Hello World" + the current thread name.
+		}
+		
+
+}

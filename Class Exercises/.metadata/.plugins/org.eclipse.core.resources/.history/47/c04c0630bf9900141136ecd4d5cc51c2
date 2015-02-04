@@ -1,0 +1,19 @@
+package iO;
+import java.io.*;
+import java.util.*;
+
+public class Calculator {
+	
+	public static void main(String[] args) {
+	
+		// System.in - keyboard
+		// InputStreamReader - converts bytes to chars
+		
+		System.out.println("Please enter a number..");
+		Scanner sc = new Scanner(new InputStreamReader(System.in));
+		int num1 = sc.nextInt();
+
+		
+	}
+	
+}

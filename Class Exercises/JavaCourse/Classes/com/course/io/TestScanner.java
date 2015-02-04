@@ -1,0 +1,46 @@
+package com.course.io;
+
+import java.io.File;
+import java.net.URL;
+import java.util.Scanner;
+
+public class TestScanner {
+
+	public static void main(String[] args)  throws Exception
+	{
+//		Scanner sc = new Scanner(new File("readme.txt"));
+//		while (sc.hasNextLine())
+//		{
+//			System.out.println(sc.nextLine());
+//		}
+		
+		
+		Scanner sc2 = new Scanner(new URL("http://www.nrg.co.il").openStream());
+		while (sc2.hasNext())
+		{
+			System.out.println(sc2.next());
+		}
+		
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("PLease enter number:");
+		int num = sc3.nextInt();
+		System.out.println("You entered: " + num);
+		
+		
+		// You can also use the scanner for strings
+		String cmd = "add;godfather:brando;pachino";
+		Scanner sc = new Scanner(cmd);
+		sc.useDelimiter(";");
+		System.out.println(sc.next());
+//		System.out.println(sc.next());
+//		System.out.println(sc.next());
+		
+		String[] cmds = cmd.split(";|:");
+		for (String str : cmds) {
+			System.out.println(str);
+		}
+		
+		
+	}
+
+}

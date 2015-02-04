@@ -1,0 +1,24 @@
+package imdbHomeworkExercise;
+import java.util.*;
+
+public class TestIMDB {
+	
+	public static void main(String[] args) 
+	{
+		IMDB i1 = IMDB.getInstance(); //The instanciation of IMDB for singleton compliancy.
+		
+		Set<String> actors1 = new HashSet<>();
+		Collections.addAll(actors1, "eew", "qwqe");
+		
+		
+		//option 2
+		actors.add("ffff");
+		actors.add("ffff");
+		actors.add("ffff");
+		actors.add("ffff");
+		
+		i1.addMovie("Terminator", actors);
+		
+	}
+
+}

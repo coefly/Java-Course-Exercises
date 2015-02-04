@@ -1,0 +1,9 @@
+package ntuJavaExercises;
+
+public class Product1ToN {
+
+	public static void main(String[]args)
+	{
+		
+	}
+}

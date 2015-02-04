@@ -1,0 +1,19 @@
+package threadsHomeExercise;
+
+public class Rothschild extends Thread{
+	
+	TreasureChest treasure1;
+	
+	public void run()
+	{
+			treasure1.addCoins((int) (Math.random() * 100));
+			try
+			{
+				Thread.sleep(3000);
+			} catch (InterruptedException e)
+			{
+				//No real need to catch an exception.
+			}
+	}
+}
+

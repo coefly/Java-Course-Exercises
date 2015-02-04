@@ -1,0 +1,20 @@
+package howToUseCompares;
+
+import java.util.LinkedList;
+import java.util.*;
+
+public class Compares {
+
+	public static void main(String[] args) 
+	{
+		List<Integer> myList = new LinkedList<>(); //List creation.
+		Collections.addAll(myList, 22, 3, 5, 8 , 2, 98, 56, 74, 19); //Populating List.
+		
+
+	}
+	
+	//Compare classes
+	
+	
+
+}

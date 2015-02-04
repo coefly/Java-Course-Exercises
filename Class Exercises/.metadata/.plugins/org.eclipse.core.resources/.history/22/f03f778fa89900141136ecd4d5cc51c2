@@ -1,0 +1,13 @@
+package imdbHomeworkExercise;
+
+public class TestIMDB {
+	
+	public static void main(String[] args) 
+	{
+		IMDB i1 = IMDB.getInstance(); //The instanciation of IMDB for singleton compliancy.
+		
+		i1.addMovie("Terminator", "Lior, Avner");
+		
+	}
+
+}

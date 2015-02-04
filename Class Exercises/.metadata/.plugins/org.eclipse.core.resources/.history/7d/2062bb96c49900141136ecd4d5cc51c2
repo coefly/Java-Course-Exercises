@@ -1,0 +1,58 @@
+package iO;
+import java.io.*;
+import java.util.*;
+
+public class Calculator {
+	
+	public static void main(String[] args) throws IOException {
+	
+		// System.in - keyboard
+		// InputStreamReader - converts bytes to chars
+		
+		System.out.println("Please enter a number..");
+		Scanner sc1 = new Scanner(new InputStreamReader(System.in));
+		int num1 = sc1.nextInt();
+		
+		System.out.println("Please enter an Operator..");
+		Scanner operator = new Scanner(new InputStreamReader(System.in));
+		String oper = operator.nextLine();
+		
+		System.out.println("Please enter another number..");
+		Scanner sc2 = new Scanner(new InputStreamReader(System.in));
+		int num2 = sc2.nextInt();
+		
+		
+		
+		System.out.println("The solution is: ");
+		System.out.println(operation(oper, num1, num2));
+			
+	}
+	
+	public static double operation(String operator, int num1, int num2) throws IOException
+	{
+		double solution = 0;
+		if (operator.equals("-"))
+		{
+			solution = num1 - num2;
+		}
+		if (operator.equals("+"))
+		{
+			solution = num1 + num2;
+		}
+		if (operator.equals("*"))
+		{
+			solution = num1 * num2;
+		}
+		if (operator.equals("/"))
+		{
+			try{
+			solution = num1 / num2;
+			}catch(IOException e)
+			{
+				System.out.println("No dividing in ZERO is allowed ;-)");
+			}
+		}
+		
+		return solution;
+	}
+}

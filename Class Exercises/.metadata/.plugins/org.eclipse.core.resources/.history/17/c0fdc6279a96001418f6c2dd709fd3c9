@@ -1,0 +1,54 @@
+package howToUseCompares;
+
+import java.util.*;
+
+import parkingHomeworkExercise.Bike;
+import parkingHomeworkExercise.Transport;
+import parkingHomeworkExercise.Truck;
+
+public class Compares {
+
+	public static void main(String[] args) 
+	{
+		
+		/*Regular Sorting*/
+		
+		List<Integer> intList = new LinkedList<>(); //List creation.
+		Collections.addAll(intList, 22, 3, 5, 8 , 2, 98, 56, 74, 19); //Populating List.
+		Collections.sort(intList); //Sorting the List with a regular sort.
+		System.out.println(intList);
+		
+		
+		/*Sorting with using comparable --> Using the same sort algorithm with a different comparisent.*/
+		
+		List<Transport> transportList = new LinkedList<>(); //Transport list creation.
+		Collections.addAll(transportList, new Bike("Blue", 100), new Truck("Grey", 80, 1985, 1000),
+				new Bike("White", 95));
+		Collections.sort(transportList); 
+		System.out.println(transportList);
+		
+		/*Sorting with using comparator --> Using our own sort algorithm and our own comparisent.*/
+		
+		List<String> stringList = new LinkedList<String>(); //String list creation.
+		Collections.addAll(stringList, "Lior", "Avner", "Rami", "Yohay", "Romi");
+		Collections.sort(stringList, compareBySecondLetter);
+		System.out.println(stringList);
+		
+
+	}
+	
+	//Compare classes
+	
+	/*Creating the comparator class for comparing by the second letter. */
+	
+	class compareBySecondLetter implements Comparator<String>
+	{
+		public int compare(String s1, String s2)
+		{
+			if (s1.charAt(1) > s2.charAt(1)) return 1;
+			if (s1.charAt(1) < s2.charAt(1)) return -1;
+			return 0;
+		}
+	}
+
+}

@@ -1,0 +1,35 @@
+package iOBasics;
+import java.io.*;
+
+public class iOBasic {
+	
+	public static void main(String[] args) {
+		
+		try {
+			copyFile("ReadMeSrc.txt", "ReadMeDest.txt");
+		} catch (IOException e) { //This was initially a 'FileNotFoundException' but we changed it to IOException since
+			//the Syso(new String(buff)) may have an IOEception.
+			e.printStackTrace();
+		}
+	}
+	
+		public static void copyFile(String src, String dest) throws IOException
+		{
+			FileInputStream Src = new FileInputStream(src);
+			FileOutputStream Dest = new FileOutputStream(dest);				
+				
+			int bytesRead = 0;
+			byte[] buffer = new byte[128];
+			
+			while (bytesRead = (Src.read(buffer)) > 0)
+			{
+				Dest.write(buffer, 0, bytesRead);
+			}
+			Src.close();
+			Dest.close();
+		}
+	}
+	
+	
+
+

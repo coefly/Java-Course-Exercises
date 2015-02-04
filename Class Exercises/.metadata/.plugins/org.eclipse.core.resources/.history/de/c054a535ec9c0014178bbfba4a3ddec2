@@ -1,0 +1,23 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+import java.io.*;
+
+public class IMDBTextualInterface {
+
+	public static void main(String[] args) {
+		
+		/*Scanner from keyboard:
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("PLease enter number:");
+		int num = sc3.nextInt();
+		System.out.println("You entered: " + num);*/
+		
+		System.out.println("Welcome to Lior's IMDB :-)" 
+				+ "\n" + "--------------------------------");
+		System.out.println("\n" + "Please enter your choice from the options below: ");
+									
+		
+	}
+	
+}

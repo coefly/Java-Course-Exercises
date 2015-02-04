@@ -1,0 +1,19 @@
+package ntuJavaExercises;
+
+public class Product1ToN {
+
+	public static void main(String[]args)
+	{
+		//Variable definition. 'prodcut' will keep all products along the loop.
+		int N = 10;
+		double product = 1;
+		
+		//for loop for computing the product from 1 to N numbers.
+		for(int i = 1; i <= N; i++)
+		{
+			product = product * N;
+		}
+		
+		System.out.println("The Product is: " + product); //Prints the product computed.
+	}
+}

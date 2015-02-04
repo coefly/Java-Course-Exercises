@@ -1,0 +1,12 @@
+package iO;
+import java.io.*;
+import java.util.*;
+
+public class Calculator {
+	
+	// System.in - keyboard
+	// InputStreamReader - converts bytes to chars
+	
+	Scanner sc = new Scanner(System.in);
+
+}

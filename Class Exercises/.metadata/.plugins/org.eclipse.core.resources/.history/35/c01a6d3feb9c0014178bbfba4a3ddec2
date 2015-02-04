@@ -1,0 +1,17 @@
+package imdbHomeworkExercise;
+
+import java.util.Scanner;
+
+public class IMDBTextualInterface {
+
+	public static void main(String[] args) {
+		
+		/*Scanner from keyboard:
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("PLease enter number:");
+		int num = sc3.nextInt();
+		System.out.println("You entered: " + num);*/
+		
+	}
+	
+}

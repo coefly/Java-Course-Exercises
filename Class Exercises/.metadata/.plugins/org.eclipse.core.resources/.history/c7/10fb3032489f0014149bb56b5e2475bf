@@ -1,0 +1,8 @@
+package threadsHomeExercise;
+
+public class TreasureChest {
+	
+	private int coins = 0;
+	
+
+}

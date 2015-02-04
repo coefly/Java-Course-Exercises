@@ -1,0 +1,28 @@
+package threadsHomeExercise;
+
+public class TreasureChest {
+	
+	private int coins = 0;
+	
+	//Constructing Treasure Chest with coins as integer.
+	public TreasureChest(int coins)
+	{
+		this.coins = coins;
+	}
+	
+	public void addCoins(int amount)
+	{
+		this.coins += amount;
+	}
+	
+	public boolean isEmpty()
+	{
+		if (this.coins == 0)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+
+}

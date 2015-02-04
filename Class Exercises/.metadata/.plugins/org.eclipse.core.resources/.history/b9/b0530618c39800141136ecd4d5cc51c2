@@ -1,0 +1,79 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+
+import com.course.shapes.MyPoint;
+
+public class IMDB {
+	
+	//
+	// Vriables
+	//
+	private Map<String, Movie> movies = new HashMap<>();
+	
+	//
+	// Constructors
+	//
+	
+	//no-arg constructor
+	public void IMDB()
+	{
+		
+	}
+	
+	//
+	// Methods
+	//
+	
+	public Map<String, Movie> getMovies()
+	{
+		return movies;
+	}
+
+	//Add a movie to IMDB.
+	public void addMovie(String name, Set<String> actors)
+	{
+		movies.put(name, new Movie(name, actors));
+	}
+	
+	//Update the rank of a movie by passing a voting value to a movie name.
+	public double vote(String name, int voting)
+	{
+		try {
+			movies.get(name).updateRank(voting);
+		} catch (ImdbException e) {
+			e.printStackTrace();
+		}
+		return movies.get(name).getRank();
+	}
+	
+	//Get top 'number' Movies.
+	public List<Movie> getTop(int number) throws ImdbException
+	{
+		if (number < 0)
+		{
+			throw new ImdbException("The number entered, " + number + "is lower than 0.");
+		}
+		if (number == movies.size())
+		{
+			throw new ImdbException("The number entered is larger than the Movie's list size."
+					+ " The number has been changed to the list's size, " + movies.size());
+			number = movies.size(); //Changing the number to the list's size in case it is bigger than that size.
+		}
+		Collections.sort(movies), new compareByRank());
+		
+	}
+}
+
+/* Comparator function.
+ * Receives 2 Movies and compares the 2 Movie's rank.
+ */
+class compareByRank implements Comparator<Movie>
+{
+	public int compare(Movie m1, Movie m2)
+	{
+		if (m1.getRank() > m2.getRank()) return 1;
+		if (m1.getRank() < m2.getRank()) return -1;
+		return 0;
+	}
+}

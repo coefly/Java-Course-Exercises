@@ -1,0 +1,134 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+
+public class Movie {
+	
+	//
+	// Variables
+	//
+	
+	Set<String> actors = new HashSet<>(); //Actors set definition creation.
+	private int numOfVoters = 0;
+	private double rank = 0;
+	private String name;
+	
+	
+	//
+	// Constructors
+	//
+	
+	//Constructor receiving a Name and a Set.
+	public Movie(String name, String...actors)
+	{
+		this.name = name;
+		setActors(actors);
+	}
+	
+	public Movie(String name, Set<String> actors) {
+		// TODO Auto-generated constructor stub
+		this.name = name;
+		this.actors=actors;
+	}
+	
+	
+	//
+	// Methods
+	//
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getNumOfVoters()
+	{
+		return numOfVoters;
+	}
+	
+	public double getRank()
+	{
+		return rank;
+	}
+	
+	public Set<String> getActors()
+	{
+		return Collections.unmodifiableSet(actors); //This will return a read-only value of Set.
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setActors(String...actorss) 
+	{
+		for(String a:actorss)
+		{
+			this.actors.add(a);
+		}
+	}
+	
+	public void addActor(String actor)
+	{
+		actors.add(actor);
+	}
+	
+	public void updateRank(int rank) throws ImdbException
+	{
+		//Throw an exception in case the entered rank does not meet the requirement of between 0 and 10.
+		if (rank < 0 || rank > 10)
+		{
+			throw new ImdbException("The rank " + rank + " entered is incorrect. Should be between 0 and 10!");
+		}
+		
+		//If the number of voter is more than 0 we must compute the rank according to the previous number of voters.
+		if (numOfVoters>0)
+    	{
+			this.rank = ((rank*numOfVoters) + rank)/(++this.numOfVoters);
+    	}
+    	else
+    	{
+    		this.rank = rank;
+    		this.numOfVoters++;
+    	}
+	}
+	
+	//toString method
+	public String toString()
+	{
+		//System.out.println("");
+		return "The chosen Movie is: " + name + " ,Number of Voters: " + numOfVoters + " ,Rank: " + rank + " ,Actors: " + getActors();
+	}
+
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Movie other = (Movie) obj;
+		if (actors == null) {
+			if (other.actors != null)
+				return false;
+		} else if (!actors.equals(other.actors))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (numOfVoters != other.numOfVoters)
+			return false;
+		if (Double.doubleToLongBits(rank) != Double
+				.doubleToLongBits(other.rank))
+			return false;
+		return true;
+	}
+	
+	
+
+}

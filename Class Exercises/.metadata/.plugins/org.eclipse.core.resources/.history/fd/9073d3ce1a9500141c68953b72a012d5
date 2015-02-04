@@ -1,0 +1,85 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+
+public class Movie {
+	
+	//
+	// Variables
+	//
+	
+	Set<String> actors = new HashSet<>(); //Actors set definition creation.
+	private int numOfVoters = 0;
+	private double rank = 0;
+	private String name = "Noname";
+	
+	
+	//
+	// Constructors
+	//
+	
+	//Constructor receiving a Name and a Set.
+	public Movie(String name, Set<String> actors)
+	{
+		this.name = name;
+		this.actors = new HashSet<String>(actors);
+	}
+	
+	//
+	// Methods
+	//
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getNumOfVoters()
+	{
+		return numOfVoters;
+	}
+	
+	public double getRank()
+	{
+		return rank;
+	}
+	
+	public Set<String> getActors()
+	{
+		return Collections.unmodifiableSet(actors); //This will return a read-only value of Set.
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setActors(Set<String> actors)
+	{
+		this.actors = new HashSet<String>(actors);
+	}
+	
+	public void addActor(String actor)
+	{
+		actors.add(actor);
+	}
+	
+	public void updateRank(int rank) throws ImdbException
+	{
+		if (rank < 0 || rank > 10)
+		{
+			throw new ImdbException("The rank " + rank + " entered is incorrect. Should be between 0 and 10!");
+		}
+		
+		if (numOfVoters>0)
+    	{
+			this.rank = ((rank*numOfVoters)+rank)/(++this.numOfVoters);
+    	}
+    	else
+    	{
+    		this.rank = rank;
+    		this.numOfVoters++;
+    	}
+	}
+
+}

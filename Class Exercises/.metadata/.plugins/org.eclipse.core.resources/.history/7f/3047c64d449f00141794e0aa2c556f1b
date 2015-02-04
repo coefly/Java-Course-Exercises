@@ -1,0 +1,76 @@
+package Threads;
+
+public class FirstThreadsExercise{
+	
+	public static void main(String[] args) {
+		
+		//Creating a new thread using the first way learnt (implements Thread)
+		HelloWorldFirstWay run1 = new HelloWorldFirstWay();
+		Thread t1 = new Thread(run1, "A");
+		t1.start();
+		//run1.dontRun();
+		
+		//Creating a new thread using the second way learnt (extends Thread)
+		Thread t2 = new HelloWorldSecondWay();
+		t2.setName("B");
+		t2.start();
+		
+		System.out.println("Back in Main.");
+		
+		
+	}
+}
+
+	class HelloWorldFirstWay implements Runnable
+	{
+		boolean dontRun = false;
+		private int i = 0;
+		
+		public void run()
+		{
+			i = 0;
+			while(!dontRun)
+			{
+				System.out.println("Hello, Beautiful World " + Thread.currentThread().getName() + i++); //Print "Hello World" + the current thread name.
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+				if (i == 10)
+					{
+					break;
+					}
+			}
+		}
+		
+		public void dontRun()
+		{
+			boolean dontRun = true;
+		}
+	}
+	
+	class HelloWorldSecondWay extends Thread
+	{
+		boolean dontRun = false;
+		
+		public void run()
+		{
+			
+			while(!dontRun)
+			{
+				System.out.println("Hello World " + Thread.currentThread().getName()); //Print "Hello World" + the current thread name.
+				break;
+			}
+		}
+		
+		public void dontRun()
+		{
+			boolean dontRun = true;
+		}
+		
+	}
+	
+
+	

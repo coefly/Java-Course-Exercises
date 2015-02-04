@@ -1,0 +1,24 @@
+package threadsHomeExercise;
+
+public class TreasureChestTest {
+	
+	public static void main(String[] args) 
+	{
+		
+		TreasureChest chest = new TreasureChest(100);
+		
+		//Creation of 40 robbers.
+		Robber[] robbers = new Robber[40];
+		for (int i = 0; i < 39; i++) 
+		{
+			robbers[i] = new Robber(chest, i + 1);
+			Thread rob = new Thread ();
+			robbers[i].start();
+		}
+		    
+	    //Creation of Rotschild.
+		Thread rot = new Thread(new Rothschild(chest));
+		rot.start();
+	}
+
+}

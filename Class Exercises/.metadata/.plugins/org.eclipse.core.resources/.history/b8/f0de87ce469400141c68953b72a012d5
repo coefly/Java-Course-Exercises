@@ -1,0 +1,145 @@
+package parkingHomeworkExercise;
+
+import java.util.*;
+
+public class ParkingWithCollections {
+
+	/*private Transport[] Veichles = new Transport[5]; // Will include all veichle
+														// types.
+*/	
+	//The creation of a new Transport array is not a List and is as follows:
+	private List <Transport> transports = new ArrayList<>();
+	
+	private int currentNum = 0; // Will include current number of veichles in
+								// the parking lot.
+
+	private static ParkingWithCollections parking = new ParkingWithCollections();
+
+	//
+	// Constructors
+	//
+	
+	/*
+	 * A private Constructor prevents any other class from instantiating.
+	 */
+	private ParkingWithCollections() {
+	}
+
+	/* Static 'instance' method */
+	public static ParkingWithCollections getParking() {
+		return parking;
+	}
+
+	//
+	// Methods
+	//
+
+	// Insert a veichle to the parking.
+	public void insertVeichle(Transport T) {
+		transports.add(T);
+	}
+
+	// Take out a veichle from the parking according to parking number given.
+	public void removeVeichle(int parkingNumber) {
+		transports.remove(parkingNumber);
+	}
+
+	// Search a veichle by color and return the first one found.
+	public Transport searchVeichleByColor(String Color) {
+		Transport foundVeichle = null;
+		for (Transport t : transports)
+		{
+			if (t.getColor() == Color)
+			{
+				foundVeichle = t;
+				break;
+			}
+		}
+		return foundVeichle;
+	}
+
+	// Count and return how many veichles there are in the parking. Veichles
+	// with more than 2 wheels.
+	public int countVeichlesWithMoreThan2Wheels() {
+		return transports.size();
+	}
+
+	// Count and return how many Cars there are in the parking (Veichles
+	// instanceof Car).
+	public int countCars() {
+		int numOfCars = 0;
+		for (Transport t : transports) {
+			if (t instanceof Car) // Check if t is an
+											// instance of a Car.
+			{
+				numOfCars++;
+			}
+		}
+		return numOfCars;
+	}
+
+	// Count and return num of Trucks of a certain color and weight.
+	public int countTrucksOfColorAndWeight(String Color, int minWeight,
+			int maxWeight) throws IllegalArgumentException{
+		int numOfTrucks = 0;
+		
+		if (maxWeight < minWeight)
+		{
+			throw new IllegalArgumentException();
+		}
+
+		for (Transport t : transports) 
+		{
+			if (t instanceof Truck
+					&& t.getColor() == Color) 
+			{
+				Truck tempTruck = (Truck) t; // Downcasting Veichle to Truck to use getWeight method.
+				if (tempTruck.getWeight() >= minWeight
+						&& tempTruck.getWeight() <= maxWeight) // Check if
+																// t is a Truck of
+																// a certain
+																// Color and
+																// Weight.
+					{
+					numOfTrucks++;
+					}
+				}	
+			}
+		return numOfTrucks;
+	}
+
+	// Count and return num of Bikes with number of gears between Gear1 and
+	// Gear2.
+	public int countBikeWithGear(int Gear1, int Gear2) {
+		int numOfBikes = 0;
+
+		for (Transport t : transports) {
+			if (t instanceof Bike) {
+				Bike tempBike = (Bike) t; // Downcasting Veichle to
+													// Bike to be able to use
+													// getGear method.
+				if (tempBike.getGear() >= Gear1 && tempBike.getGear() <= Gear2) // Check
+																				// if t is a Bike with a gear between Gear 1
+																				// and Gear2.
+				{
+					numOfBikes++;
+				}
+			}
+		}
+		return numOfBikes;
+	}
+
+	// Search all veichles with defined speed and return all of them.
+	public List <Transport> searchAndReturnVeichlesBySpeed(int max_velocity) {
+		List <Transport> veichlesBySpeed = new ArrayList<>();
+		for (Transport t : transports) {
+			if (t != null
+					&& t.getMaxVelocity() == max_velocity) 
+			{
+				veichlesBySpeed.add(t);
+			}
+		}
+		return veichlesBySpeed;
+	}
+
+}

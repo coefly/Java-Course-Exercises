@@ -1,0 +1,12 @@
+package imdbHomeworkExercise;
+
+public class ImdbException extends Exception {
+	
+	public class ImdbExceptions extends Exception{
+
+		public ImdbExceptions(String msg) {
+				super(msg);
+		}
+	}
+
+}

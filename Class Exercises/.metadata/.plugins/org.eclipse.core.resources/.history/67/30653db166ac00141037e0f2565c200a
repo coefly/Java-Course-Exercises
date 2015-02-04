@@ -1,0 +1,20 @@
+package beans;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import com.course.shapes.MyPoint;
+
+public class Company {
+	
+	private long id;
+	private String compName;
+	private String password;
+	private String email;
+	private Collection<Coupon> coupons;
+	
+
+}

@@ -1,0 +1,37 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+import java.io.*;
+
+public class IMDBTextualInterface {
+
+	public static void main(String[] args) {
+		
+		/*Scanner from keyboard:
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("PLease enter number:");
+		int num = sc3.nextInt();
+		System.out.println("You entered: " + num);*/
+		
+		System.out.println("Welcome to Lior's IMDB :-)" 
+				+ "\n" + "--------------------------------");
+		
+		Scanner userChoice = new Scanner(System.in); //Scanning the keyboard input for the user's chosen option.
+		
+		System.out.println("Please enter your choice from the options below: ");
+		
+		//Options menu.
+		System.out.println("1. Add a movie to the IMDB database.");
+		System.out.println("2. Vote for a movie in IMDB.");
+		System.out.println("3. Get a list of the top movies.");
+		System.out.println("4. View all the movies found in IMDB.");
+		System.out.println("5. Save IMDB to a .TXT file.");
+		
+		
+		
+		
+									
+		
+	}
+	
+}

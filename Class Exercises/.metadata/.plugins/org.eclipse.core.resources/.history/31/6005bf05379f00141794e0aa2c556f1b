@@ -1,0 +1,27 @@
+package Threads;
+
+public class FirstThreadsExercise{
+	
+	public static void main(String[] args) {
+		
+		hello
+		
+		
+		
+	}
+
+	class HelloWorldFirstWay implements Runnable
+	{
+		
+		public void print()
+		{
+			while(!run)
+			{
+				System.out.println("Hello World" + Thread.currentThread().getName()); //Print "Hello World" + the current thread name.
+			}
+		}
+	}
+	
+}
+
+	

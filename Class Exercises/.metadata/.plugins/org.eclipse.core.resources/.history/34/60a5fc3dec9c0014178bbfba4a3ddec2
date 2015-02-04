@@ -1,0 +1,40 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+import java.io.*;
+
+public class IMDBTextualInterface {
+
+	public static void main(String[] args) {
+		
+		/*Scanner from keyboard:
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("PLease enter number:");
+		int num = sc3.nextInt();
+		System.out.println("You entered: " + num);*/
+		
+		System.out.println("Welcome to Lior's IMDB :-)" 
+				+ "\n" + "--------------------------------");
+		System.out.println("\n" + "Please enter your choice from the options below: ");
+		
+		public void getTop(int number) throws ImdbException
+		{
+			if (number < 0)
+			{
+				throw new IllegalArgumentException("The number entered, " + number + "is lower than 0.");
+			}
+			if (number == movies.size())
+			{
+				number = movies.size(); //Changing the number to the list's size in case it is bigger than that size.
+				throw new ImdbException("The number entered is larger than the Movie's list size."
+						+ " The number has been changed to the list's size, " + movies.size());
+			}
+			List <Movie> moviesRankList = new ArrayList<> (movies.values());
+			Collections.sort(moviesRankList, new compareByRank());
+			return moviesRankList.subList(0, (number)); //subList receives a 'from' and 'to' number and returns a sub list.
+		
+									
+		
+	}
+	
+}

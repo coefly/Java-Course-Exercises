@@ -1,0 +1,38 @@
+package imdbHomeworkExercise;
+
+import java.util.*;
+
+import com.course.shapes.MyPoint;
+
+public class IMDB {
+	
+	//
+	// Vriables
+	//
+	private Map<String, Movie> movies = new HashMap<>();
+	
+	//
+	// Constructors
+	//
+	
+	//no-arg constructor
+	public void IMDB()
+	{
+		
+	}
+	
+	//
+	// Methods
+	//
+	
+	public Movie getMovies()
+	{
+		Set<String> keys = movies.keySet();
+		return movies.get(keys);
+	}
+
+	public void addMovie(String name, Set<String> actors)
+	{
+		movies.put(name, new HashSet<String>(actors));
+	}
+}

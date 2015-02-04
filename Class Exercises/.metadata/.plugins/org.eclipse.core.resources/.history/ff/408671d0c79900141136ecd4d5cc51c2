@@ -1,0 +1,40 @@
+package imdbHomeworkExercise;
+import java.util.*;
+
+public class TestIMDB {
+	
+	public static void main(String[] args) 
+	{
+		IMDB i1 = IMDB.getInstance(); //The instanciation of IMDB for singleton compliancy.
+		
+		//Option 1 for creating a set of actors.
+		Set<String> actors1 = new HashSet<>();
+		Collections.addAll(actors1, "eew", "qwqe");
+		
+		
+		//Option 2 for creating a set of actors.
+		Set<String> actors2 = new HashSet<>();
+		actors2.add("Rami");
+		actors2.add("Dana");
+		actors2.add("Bat");
+		actors2.add("Mahmud");
+		
+		//Option 3 for creating a set of actors.
+		//TODO - Create another constructor in Movie which will receive a name and an array of strings
+		//TODO - and with a loop will enter all names into the array of strings.
+		
+		try {
+			i1.addMovie("Terminator", actors1);
+		} catch (ImdbException e) {
+			e.getMessage();
+		}
+		
+		try {
+			i1.addMovie("Sami Borekas", actors2);
+		} catch (ImdbException e) {
+			e.getMessage();
+		}
+		
+	}
+
+}

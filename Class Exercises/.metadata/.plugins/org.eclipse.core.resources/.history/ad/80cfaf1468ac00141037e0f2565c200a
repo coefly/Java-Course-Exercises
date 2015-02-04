@@ -1,0 +1,17 @@
+package beans;
+
+import java.util.Collection;
+
+public class Customer {
+	
+	//
+	// Varivables.
+	//
+	
+	private long id;
+	private String custName;
+	private String password;
+	private Collection<Coupon> coupons;
+
+	
+}

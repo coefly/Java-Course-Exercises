@@ -1,0 +1,17 @@
+package beans;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class Coupon {
+	
+	private long id;
+	private String title;
+	private Date startDate;
+	private Date endDate;
+
+	
+}
+
